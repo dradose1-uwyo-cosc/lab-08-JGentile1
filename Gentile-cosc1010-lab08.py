@@ -102,15 +102,15 @@ def quadratic_formula(a, b, c):
     list2 =[]
     list3 = []
     o1 = (b**2) - 4*a*c
-    if "-" in o1:
+    if (str(o1)[0] == '-'):
         return "null"
     o1 = o1**(.5)
-    list2[0] = -b + o1
-    list2[1] = -b - o1
+    list2.append(-b + o1)
+    list2.append(-b - o1)
     for i in list2:
         n = i/(2*a)
         list3.append(n)
-        return list3
+    return list3
 
 
 while True:
@@ -125,10 +125,8 @@ while True:
         break
 
     else:
-        c_input = string_converter(a_input)
+        a_input = string_converter(a_input)
         d_input = string_converter(d_input)
         c_input = string_converter(c_input)
         out3 = quadratic_formula(a_input, d_input, c_input)
         print(out3)
-
-# I don't know whats wrong or how to fix it. I give up.
